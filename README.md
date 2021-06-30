@@ -21,6 +21,12 @@ Here are some of the results from my trained model! The image on the left is a l
 As you can see, the super-resolved images look rather good. There are however some artifacts that show up at sharp discontinuities, especially in the eyes.
 
 # Usage
+## Getting Started
+
+Once you have the code, set up a virtual environment if you would like and install the necessary libraries by running the command below.
+```bat
+pip install -r /path/to/requirements.txt
+```
 
 ## Dataset
 Use whatever dataset you want, as long as it encompasses the image domain that you want to run inference on. 
@@ -35,10 +41,3 @@ Configure hyperparameters in [configure_training.py](/configure_training.py). **
 
 Then just run [train.py](/train.py). Note that pretraining just trains the generator using mean-squared error loss without a discriminator network and adversarial training implements the entire GAN training structure. I had the best luck with small batch sizes (4, 8, or 16) just because of the nature of GAN training. Anyway, expect this to take a month to train.
 
-
-## Getting Started
-
-Once you have the code, set up a virtual environment if you would like and install the necessary libraries by running the command below.
-```bat
-pip install -r /path/to/requirements.txt
-```
