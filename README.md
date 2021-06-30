@@ -31,7 +31,7 @@ This model was trained on the [CelebA-HQ Dataset](https://github.com/mazzzystar/
 I split them into a training and test dataset consisting of 29,000 and 1,000 images, respectively.
 
 ## Training
-Configure hyperparameters in [configure_training.py](/configure_training.py). **BE SURE TO MATCH [DOWNSAMPLE FACTOR](https://github.com/shankal17/PyTorch-SRGAN/blob/main/configure_training.py#:~:text=config.DATASET.downsample_factor%20%3D%204) WITH THE NUMBER OF [PIXEL SHUFFLE BLOCKS](https://github.com/shankal17/PyTorch-SRGAN/blob/main/models/generator.py#:~:text=self.pixel_shuffle_1%20%3D%20PixelShuffleBlock,pixel_shuffle_2%20%3D%20PixelShuffleBlock(64)%20%23) YOU'RE USING. This is easy to forget and is hard to find the mistake.**
+Configure hyperparameters in [configure_training.py](/configure_training.py). **BE SURE TO MATCH [DOWNSAMPLE FACTOR](https://github.com/shankal17/PyTorch-SRGAN/blob/main/configure_training.py#:~:text=config.DATASET.downsample_factor%20%3D%204) WITH THE APPROPRIATE NUMBER OF [PIXEL SHUFFLE BLOCKS](https://github.com/shankal17/PyTorch-SRGAN/blob/main/models/generator.py#:~:text=self.pixel_shuffle_1%20%3D%20PixelShuffleBlock,pixel_shuffle_2%20%3D%20PixelShuffleBlock(64)%20%23) YOU'RE USING. This is easy to forget and is hard to find the mistake.**
 
 Then just run [train.py](/train.py). Note that pretraining just trains the generator using mean-squared error loss without a discriminator network and adversarial training implements the entire GAN training structure. I had the best luck with small batch sizes (4, 8, or 16) just because of the nature of GAN training. Anyway, expect this to take a month to train.
 
